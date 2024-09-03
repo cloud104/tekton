@@ -4,7 +4,7 @@ metadata:
   namespace: tekton-pipelines
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-prod
-    external-dns.alpha.kubernetes.io/hostname: dashboard-tekton.cluster-teste.tcloud-devops.cloudtotvs.com.br.
+    external-dns.alpha.kubernetes.io/hostname: dashboard-tekton.poc-tekton.tcloud-devops.cloudtotvs.com.br.
     kubernetes.io/ingress.class: nginx
     nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
     nginx.ingress.kubernetes.io/auth-type: "basic"
@@ -13,7 +13,7 @@ metadata:
   name: dashboard-tekton
 spec:
   rules:
-  - host: dashboard-tekton.cluster-teste.tcloud-devops.cloudtotvs.com.br
+  - host: dashboard-tekton.poc-tekton.tcloud-devops.cloudtotvs.com.br
     http:
       paths:
       - pathType: Prefix
@@ -26,5 +26,5 @@ spec:
               # name: http-listener
   tls:
   - hosts:
-    - "dashboard-tekton.cluster-teste.tcloud-devops.cloudtotvs.com.br"
+    - "dashboard-tekton.poc-tekton.tcloud-devops.cloudtotvs.com.br"
     secretName: tekton-passwd
