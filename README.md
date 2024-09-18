@@ -12,7 +12,7 @@ Este guia fornece instruções para instalar o Tekton em seu cluster Kubernetes.
 1. Instale o Tekton Pipelines:
 
 ```bash
-kubectl apply --filename https://storage.googleapis.com/tekton-releases/pipeline/latest/release.yaml
+kubectl apply --filename https://storage.googleapis.com/tekton-releases/pipeline/previous/v0.56.4/release.yaml
 ```
 
 2. Instale o Tekton Triggers:
@@ -72,21 +72,3 @@ kubectl --namespace tekton-pipelines port-forward svc/tekton-dashboard 9097:9097
 ```
 
 Consulte a [documentação oficial do Tekton](https://tekton.dev/docs/) para mais informações sobre como começar a usar o Tekton.
-
----------------------------------------------------------------------------------------------
-** Comando para alteração do storageclass **
-
-kubectl patch storageclass standard -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"false"}}}'
-
-kubectl patch storageclass gold -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
-
-
-
-
-
-
-Depois de subir o código no github eu mudo para a branch main, atualizo ela e rodo aquele script que gera as imagens
-
-Então, eu coloco a tag das versões nas imagens e dou um pull
-
-Um com a tag e outro sem a tag para que a tag latest fique na versão mais atual mesmo
